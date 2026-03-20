@@ -1,0 +1,7 @@
+Circuit name,Transfection group,Contents,Concentration (ng/uL),DNA wanted (ng)
+Escapee,X1,eBFP2,50,50
+Escapee,X1,PgU,50,200
+Escapee,X1,Csy4_rec_mNeonGreen,50,50
+Escapee,X2,mKO2,50,50
+Escapee,X2,PgU,50,50
+Escapee,X2,PgU_rec_mNeonGreen,50,200
