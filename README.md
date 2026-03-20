@@ -1,21 +1,35 @@
-# NeuromorphicWizard
+# 🧠✨ NeuromorphicWizard 🧬🤖
 
-A Python web application for designing **Intracellular Artificial Neural Networks (IANNs)** using genetic circuits, predicting their behavior with the Biocompiler, and generating OT-2 liquid handling robot protocols for automated transfection.
+<div align="center">
 
-Built for [HTGAA 2026](https://2026a.htgaa.org/) (How to Grow Almost Anything) - Week 7: Genetic Circuits II.
+![Neuromorphic](https://img.shields.io/badge/🧪_Neuromorphic-Computing-blueviolet?style=for-the-badge)
+![Genetic Circuits](https://img.shields.io/badge/🧬_Genetic-Circuits-green?style=for-the-badge)
+![OT-2](https://img.shields.io/badge/🤖_OT--2-Automation-orange?style=for-the-badge)
+![Python](https://img.shields.io/badge/🐍_Python-3.10-blue?style=for-the-badge)
+![HTGAA](https://img.shields.io/badge/🎓_HTGAA-2026-red?style=for-the-badge)
 
-## What It Does
+*🔬 Design intracellular neural networks. 🔮 Predict their behavior. 🤖 Automate the wet lab.*
+
+</div>
+
+---
+
+A Python web application for designing **Intracellular Artificial Neural Networks (IANNs)** using genetic circuits, predicting their behavior with the Biocompiler, and generating OT-2 liquid handling robot protocols for automated transfection. 🚀
+
+Built for [HTGAA 2026](https://2026a.htgaa.org/) (How to Grow Almost Anything) - Week 7: Genetic Circuits II. 🎓
+
+## 🎯 What It Does
 
 NeuromorphicWizard takes a simple CSV describing which plasmids to combine and how much DNA to use, then:
 
-1. **Validates** your circuit design (part names, DNA limits, slot conflicts)
-2. **Predicts** circuit behavior using the Biocompiler API (heatmap visualization)
-3. **Generates** OT-2 robot protocols with plate layouts and color-coded Excel files
-4. **Simulates** the Opentrons protocol before running on hardware
+1. ✅ **Validates** your circuit design (part names, DNA limits, slot conflicts)
+2. 🔮 **Predicts** circuit behavior using the Biocompiler API (heatmap visualization)
+3. 📋 **Generates** OT-2 robot protocols with plate layouts and color-coded Excel files
+4. 🧪 **Simulates** the Opentrons protocol before running on hardware
 
-## Background
+## 📖 Background
 
-### How Neuromorphic Circuits Work
+### 🧬 How Neuromorphic Circuits Work
 
 These circuits perform **analog computation** inside living HEK293 cells using a library of plasmids from the Ron Weiss Lab at MIT. Unlike traditional digital genetic circuits (ON/OFF), IANNs produce a continuous spectrum of expression levels — like real neurons.
 
@@ -36,7 +50,7 @@ Three ERNs are available, each recognizing a different RNA sequence:
 | **Csy4** | Cuts mRNA with Csy4 recognition sequences |
 | **PgU** | Cuts mRNA with PgU recognition sequences |
 
-### Part Naming Convention
+### 🏷️ Part Naming Convention
 
 The naming convention encodes the biology:
 
@@ -48,7 +62,7 @@ The naming convention encodes the biology:
 | `X_rec_Y_rec_Z` | `CasE_rec_Csy4_rec_mKO2` | Dual recognition — either X or Y can cut it |
 | Color name | `eBFP2`, `mKO2` | Constitutive fluorescent reporter (always ON) |
 
-### Chains of Inhibition
+### ⛓️ Chains of Inhibition
 
 Circuits are built by chaining inhibitions:
 
@@ -62,33 +76,33 @@ Triple:  PgU ──▶ Csy4 ──▶ CasE ──▶ mNG              → green 
 
 Even number of inhibitions = output ON. Odd = OFF. The **amounts matter** — the ratio between plasmids determines expression levels, making the computation analog rather than digital.
 
-### Available Parts
+### 🧩 Available Parts
 
-**ERNs:** `CasE`, `Csy4`, `PgU`
+**✂️ ERNs:** `CasE`, `Csy4`, `PgU`
 
-**ERN-regulated ERNs:** `PgU_rec_Csy4`, `PgU_rec_CasE`, `Csy4_rec_CasE`, `CasE_rec_Csy4`
+**🔗 ERN-regulated ERNs:** `PgU_rec_Csy4`, `PgU_rec_CasE`, `Csy4_rec_CasE`, `CasE_rec_Csy4`
 
-**ERN-regulated Reporters:** `Csy4_rec_mNeonGreen`, `CasE_rec_mNeonGreen`, `PgU_rec_mNeonGreen`, `CasE_rec_Csy4_rec_mKO2`
+**💡 ERN-regulated Reporters:** `Csy4_rec_mNeonGreen`, `CasE_rec_mNeonGreen`, `PgU_rec_mNeonGreen`, `CasE_rec_Csy4_rec_mKO2`
 
-**Fluorescent Reporters (constitutive):**
+**🌈 Fluorescent Reporters (constitutive):**
 
-| Protein | Color |
-|---------|-------|
-| `mNeonGreen` | Green |
-| `mKO2` | Orange |
-| `eBFP2` | Blue |
-| `mMaroon1` | Maroon/Red |
-| `mCherry` | Red |
-| `PacBlue` | Blue (Pacific Blue) |
+| Protein | Color | |
+|---------|-------|-|
+| `mNeonGreen` | Green | 💚 |
+| `mKO2` | Orange | 🧡 |
+| `eBFP2` | Blue | 💙 |
+| `mMaroon1` | Maroon/Red | ❤️ |
+| `mCherry` | Red | 🔴 |
+| `PacBlue` | Blue (Pacific Blue) | 💎 |
 
-## Installation
+## ⚡ Installation
 
-### Prerequisites
+### 📋 Prerequisites
 
 - [Anaconda Distribution](https://www.anaconda.com/download/success)
 - Python 3.10
 
-### Setup
+### 🛠️ Setup
 
 ```bash
 # 1. Create conda environment
@@ -105,9 +119,9 @@ pytest tests/ -v
 python3 main.py
 ```
 
-Opens at **http://localhost:8080**
+Opens at **http://localhost:8080** 🌐
 
-## Input Format
+## 📥 Input Format
 
 A CSV with 5 columns:
 
@@ -119,7 +133,7 @@ A CSV with 5 columns:
 | **Concentration (ng/uL)** | Stock concentration | Typically 50 |
 | **DNA wanted (ng)** | Amount of this plasmid | All rows in a circuit should sum to <= 650 ng |
 
-### Example CSV
+### 📝 Example CSV
 
 ```csv
 Circuit name,Transfection group,Contents,Concentration (ng/uL),DNA wanted (ng)
@@ -132,39 +146,39 @@ MyCircuit,Bias,CasE_rec_mNeonGreen,50,200
 
 This defines a double-inhibition cascade: Csy4 inhibits CasE, CasE inhibits mNeonGreen. Result: green ON (double negative = positive).
 
-## Application Tabs
+## 🖥️ Application Tabs
 
-### Build
+### 🔨 Build
 
 The main experiment design interface:
 
-- **Upload** circuit design CSV or Biocompiler JSON
-- **Edit** data in an interactive table (AG Grid)
-- **Generate** plate layouts with automatic slot assignment
-- **Visualize** color-coded plate layouts
-- **Simulate** Opentrons protocols
-- **Download** generated outputs (Excel + Python script)
+- 📤 **Upload** circuit design CSV or Biocompiler JSON
+- ✏️ **Edit** data in an interactive table (AG Grid)
+- ⚙️ **Generate** plate layouts with automatic slot assignment
+- 👁️ **Visualize** color-coded plate layouts
+- 🧪 **Simulate** Opentrons protocols
+- 💾 **Download** generated outputs (Excel + Python script)
 
-### Predict
+### 🔮 Predict
 
 Simulates circuit behavior using the [Biocompiler API](https://biocomp-api.rachael.jdisset.com):
 
-- Select a circuit from your uploaded data
-- Converts to Biocompiler recipe format
-- Displays a prediction **heatmap** (32x32 grid) showing output fluorescence vs. input concentrations
-- Shows the recipe JSON sent to the API
+- 🎯 Select a circuit from your uploaded data
+- 🔄 Converts to Biocompiler recipe format
+- 📊 Displays a prediction **heatmap** (32x32 grid) showing output fluorescence vs. input concentrations
+- 📋 Shows the recipe JSON sent to the API
 
-**Predict API constraints:** For prediction, circuits must have exactly X1 and X2 transfection groups, each containing a marker (fluorescent protein), an ERN, and an output (ERN_rec_fluorescent). The API currently recognizes `eBFP2` and `mKO2` as markers, and `mNeonGreen` as the output fluorescent protein.
+> ⚠️ **Predict API constraints:** For prediction, circuits must have exactly X1 and X2 transfection groups, each containing a marker (fluorescent protein), an ERN, and an output (ERN_rec_fluorescent). The API currently recognizes `eBFP2` and `mKO2` as markers, and `mNeonGreen` as the output fluorescent protein.
 
-### Generate
+### 🤖 Generate
 
-*Coming soon* — AI Agent Interface to Biocompiler-Designer for automated circuit design.
+*🚧 Coming soon* — AI Agent Interface to Biocompiler-Designer for automated circuit design.
 
-### Analyze
+### 📊 Analyze
 
-*Coming soon* — Flow Cytometry Results Visualizer for analyzing wet lab results.
+*🚧 Coming soon* — Flow Cytometry Results Visualizer for analyzing wet lab results.
 
-## Example Circuits
+## 🧫 Example Circuits
 
 The `examples/` directory contains ready-to-use CSV files:
 
@@ -187,7 +201,7 @@ The `examples/` directory contains ready-to-use CSV files:
 | `with_dilution.csv` | Demonstrates automatic dilution handling | Build only |
 | `with_plate_destinations.csv` | Pre-assigned plate destinations | Build only |
 
-### Circuit Topology Guide
+### 🗺️ Circuit Topology Guide
 
 Different circuit topologies produce different heatmap patterns:
 
@@ -201,7 +215,7 @@ Different circuit topologies produce different heatmap patterns:
 
 **Escapee** (project11): One output has no matching ERN — it's always ON, creating a constant baseline floor in the heatmap.
 
-## Output Files
+## 📦 Output Files
 
 When you export from the Build tab, the Wizard generates:
 
@@ -212,7 +226,7 @@ When you export from the Build tab, the Wizard generates:
 | `plate_layouts.xlsx` | Color-coded plate layout diagrams |
 | `biocompiler_format.json5` | Circuit in Biocompiler format with plasmid ratios |
 
-## Architecture
+## 🏗️ Architecture
 
 ```
 NeuromorphicWizard/
@@ -257,7 +271,7 @@ NeuromorphicWizard/
     example_input/                # Test fixtures (valid/invalid)
 ```
 
-## Physical Protocol Flow
+## 🔬 Physical Protocol Flow
 
 The columns in the generated config trace each plasmid's journey through the OT-2 robot:
 
@@ -278,7 +292,7 @@ The columns in the generated config trace each plasmid's journey through the OT-
 [Plate destination]    Output well — HEK293 cells receive the transfection mix
 ```
 
-## Hardware Layouts
+## 🔧 Hardware Layouts
 
 Two OT-2 deck layouts are supported:
 
@@ -286,14 +300,14 @@ Two OT-2 deck layouts are supported:
 
 **96-Well Layout**: Mixed tube racks (slots 4, 5) with a 96-well plate (slot 6) for high-throughput experiments.
 
-## Key Constraints
+## ⚠️ Key Constraints
 
 - Total DNA per circuit: **<= 650 ng** (recommended), 800 ng hard limit
 - Minimum pipette volume: **2 µL** (below this, automatic dilution is triggered)
 - Stock concentration: typically **50 ng/µL**
 - The **ratio** between plasmids matters more than absolute amounts for circuit behavior
 
-## Dependencies
+## 📚 Dependencies
 
 ```
 nicegui==3.3.1        # Web UI framework
@@ -307,7 +321,7 @@ matplotlib>=3.8.0     # Heatmap plotting
 pytest>=7.4.0         # Testing
 ```
 
-## Testing
+## 🧪 Testing
 
 ```bash
 # Run all tests
@@ -319,6 +333,21 @@ pytest tests/integration/ -v
 pytest tests/regression/ -v
 ```
 
-## License
+## 📄 License
 
-Developed for HTGAA 2026 at the MIT Media Lab.
+Developed for HTGAA 2026 at the MIT Media Lab. 🏛️
+
+---
+
+<div align="center">
+
+🧠 **NeuromorphicWizard** — *Where synthetic biology meets neural computation* 🧬
+
+Made with ❤️ for [HTGAA 2026](https://2026a.htgaa.org/)
+
+```
+    🧬 → 🔬 → 🤖 → 🧫 → 📊
+   Design  Predict  Robot   Cells  Analyze
+```
+
+</div>
