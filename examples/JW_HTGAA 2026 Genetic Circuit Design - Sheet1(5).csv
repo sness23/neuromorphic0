@@ -1,0 +1,7 @@
+Circuit name,Transfection group,Contents,Concentration (ng/uL),DNA wanted (ng),
+JWcircuit,X1,mNeonGreen,50,100,// color #1
+JWcircuit,X1,CasE,50,100,// ERN #1
+JWcircuit,X2,mKO2,50,100,// color #2
+JWcircuit,X2,PgU,50,100,// ERN #2
+JWcircuit,OR,CasE_rec_PgU_rec_Csy4,50,100,// OR #1
+JWcircuit,NOT,Csy4_rec_mMaroon1,50,100,// NOT #1

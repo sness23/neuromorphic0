@@ -1,0 +1,7 @@
+Circuit name,Transfection group,Contents,Concentration (ng/uL),DNA wanted (ng)
+AnalogDual,X1,CasE,50,200
+AnalogDual,X1,eBFP2,50,50
+AnalogDual,X2,PgU,50,200
+AnalogDual,X2,mKO2,50,50
+AnalogDual,Bias,PgU_rec_mNeonGreen,50,100
+AnalogDual,Bias,CasE_rec_Csy4_rec_mKO2,50,100
