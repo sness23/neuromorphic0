@@ -1,0 +1,7 @@
+Circuit name,Transfection group,Contents,Concentration (ng/uL),DNA wanted (ng)
+SelfInhibit,X1,eBFP2,50,100
+SelfInhibit,X1,CasE,50,100
+SelfInhibit,X1,CasE_rec_mNeonGreen,50,100
+SelfInhibit,X2,mKO2,50,100
+SelfInhibit,X2,PgU,50,100
+SelfInhibit,X2,PgU_rec_mNeonGreen,50,100

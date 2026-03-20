@@ -1,0 +1,7 @@
+Circuit name,Transfection group,Contents,Concentration (ng/uL),DNA wanted (ng)
+CasE_Csy4_cascade,X1,mKO2,50,100
+CasE_Csy4_cascade,X1,CasE,50,50
+CasE_Csy4_cascade,X1,Csy4_rec_mNeonGreen,50,50
+CasE_Csy4_cascade,X2,eBFP2,50,100
+CasE_Csy4_cascade,X2,Csy4,50,150
+CasE_Csy4_cascade,X2,CasE_rec_mNeonGreen,50,50
