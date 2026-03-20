@@ -1,0 +1,10 @@
+*.*
+!*.gitignore
+!*.py
+!*.js
+!*.css
+!*.md
+!*.txt
+!*.rst
+!*.csv
+!*.json*
